@@ -5,6 +5,14 @@ import numpy as np
 from pytesseract import Output
 from PySide6.QtCore import Slot, QObject, Signal
 
+import platform
+import pytesseract
+from pathlib import Path
+
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = str(
+        Path(r"C:\Program Files\Tesseract-OCR\tesseract.exe")
+    )
 
 class OCRWorker(QObject):
 
