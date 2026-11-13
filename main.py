@@ -1,6 +1,8 @@
 
 import sys
 from PySide6.QtWidgets import QApplication
+from PySide6.QtGui import QIcon
+
 
 from overlay import Overlay
 from mainwindow import MainWindow
@@ -8,6 +10,8 @@ from mainwindow import MainWindow
 
 def main():
     app = QApplication(sys.argv)
+
+    app.setWindowIcon(QIcon("icon.png"))
 
     overlay = Overlay()
     window = MainWindow(overlay)
